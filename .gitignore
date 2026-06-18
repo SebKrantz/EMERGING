@@ -1,0 +1,15 @@
+# Data files
+*.qs
+*.qs2
+*.xlsx
+*.xls
+*.csv
+*.mat
+*.pdf
+
+# Directories with only data/output
+ICIO_CSV/
+V2/
+decompr/
+figures/
+results/
