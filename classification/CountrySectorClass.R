@@ -6,7 +6,7 @@
 library(fastverse)
 fastverse_extend(rhdf5, openxlsx, install = TRUE)
 
-files <- list.files("V2", pattern = "_m.mat$", full.names = TRUE)
+files <- list.files("../V2", pattern = "_m.mat$", full.names = TRUE)
 
 # MATLAB HDF5 cell arrays of strings are stored as object reference datasets.
 # rhdf5 returns them as H5Ref objects; dereference each to a uint16 array and

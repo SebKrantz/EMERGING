@@ -8,10 +8,10 @@
 *.pdf
 
 # Allow classification Excel files
-!EMERGING_Classification.xlsx
-!EMERGING_Country.xlsx
-!EMERGING_Sector.xlsx
-!EMERGING_Sector_V2.xlsx
+!classification/EMERGING_Classification.xlsx
+!classification/EMERGING_Country.xlsx
+!classification/EMERGING_Sector.xlsx
+!classification/EMERGING_Sector_V2.xlsx
 
 # Allow article PDF
 !EMERGING_Article.pdf

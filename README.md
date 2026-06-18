@@ -23,35 +23,50 @@ Huo, J., Wang, W., & Guan, D. (2026). Multi-regional Input–output Table for th
 
 ## Repository Contents
 
-### Classification Files
+```
+EMERGING/
+├── classification/          # classification files and extraction scripts
+├── import/                  # MRIO import, aggregation, and ICIO CSV export
+└── decomposition/           # GVC decompositions and RVC indicator computation
+```
+
+### `classification/`
 
 The curated classifications used by the V2 pipeline are `EMERGING_Sector_V2.xlsx` and `EMERGING_Country.xlsx`. These are hand-curated and differ from the raw labels embedded in the `.mat` files:
 
 - **`EMERGING_Sector_V2.xlsx`** — curated sector classification for V2 (133 sectors). V2 removes the 27th sector of V1 (the aggregate HS-27 mineral fuels entry), since that aggregate is already disaggregated into detailed energy sub-sectors 99–105, reducing the total from 134 to 133 sectors.
 - **`EMERGING_Country.xlsx`** — country classification with proper ISO3c codes for all 245 economies. As established by `Compare_Classifiction_with_V1.R`, the country list is consistent between V1 and V2.
-- **`EMERGING_Sector.xlsx`** — raw V1 sector labels extracted from the `.mat` files (134 sectors), kept for reference.
-- **`EMERGING_Classification.xlsx`** — the raw country and sector labels as embedded in the V2 `.mat` HDF5 files, extracted by `CountrySectorClass.R`. Used to verify the curated classifications above rather than as a primary input.
-
-### Scripts
+- **`EMERGING_Sector.xlsx`** — raw V1 sector labels (134 sectors), kept for reference.
+- **`EMERGING_Classification.xlsx`** — raw country and sector labels as embedded in the V2 `.mat` HDF5 files, extracted by `CountrySectorClass.R`. Used to verify the curated classifications above rather than as a primary input.
 
 | Script | Language | Description |
 |--------|----------|-------------|
-| `CountrySectorClass.R` | R | Extracts the raw country and sector labels from the V2 `.mat` HDF5 files and exports them to `EMERGING_Classification.xlsx` for reference; the curated classifications used in the pipeline are `EMERGING_Country.xlsx` and `EMERGING_Sector_V2.xlsx` |
-| `Compare_Classifiction_with_V1.R` | R | Verifies that the country classification is consistent between V1 and V2, and documents the sectoral differences (notably the removal of the aggregate HS-27 sector in V2) |
-| `ImportEMERGING_V2.R` | R | Imports the V2 MRIO tables, aggregates to broad sectors using the curated classification, and saves to `EMERGING_Broad_Sectors.qs2` |
+| `CountrySectorClass.R` | R | Extracts raw country and sector labels from the V2 `.mat` HDF5 files → `EMERGING_Classification.xlsx` (reference only; the curated classifications are `EMERGING_Country.xlsx` and `EMERGING_Sector_V2.xlsx`) |
+| `Compare_Classifiction_with_V1.R` | R | Verifies that the country classification is consistent between V1 and V2, and documents the sectoral difference (removal of the aggregate HS-27 sector in V2) |
+
+### `import/`
+
+| Script | Language | Description |
+|--------|----------|-------------|
+| `ImportEMERGING_V2.R` | R | Imports the V2 MRIO tables from `V2/*.mat`, aggregates to broad sectors using the curated classification, and saves to `EMERGING_Broad_Sectors.qs2` |
 | `STATA_ICIO_CSVs_V2.R` | R | Writes the aggregated ICIO tables from `EMERGING_Broad_Sectors.qs2` to CSV files under `ICIO_CSV/` |
+
+### `decomposition/`
+
+| Script | Language | Description |
+|--------|----------|-------------|
 | `ICIO_decomp.jl` | Julia | GVC decompositions (KWW country-level, exporter-sector, bilateral-sector) using [ICIO.jl](https://github.com/SebKrantz/ICIO.jl); writes results to `ICIO_CSV/` |
 | `ICIO_decomp.do` | Stata | Stata equivalent of the GVC decompositions |
-| `rvc_indicators_V2.R` | R | Computes Regional Value Chain (RVC) indicators from decomposition outputs and produces figures |
+| `rvc_indicators_V2.R` | R | Computes Regional Value Chain (RVC) indicators from decomposition outputs and produces figures under `figures/` |
 
 ## Workflow
 
 ```
-1. CountrySectorClass.R      # extract classification from .mat files
-2. ImportEMERGING_V2.R       # import & aggregate MRIO tables → EMERGING_Broad_Sectors.qs2
-3. STATA_ICIO_CSVs_V2.R      # write ICIO CSVs → ICIO_CSV/
-4. ICIO_decomp.jl            # GVC decompositions → ICIO_CSV/ (or ICIO_decomp.do for Stata)
-5. rvc_indicators_V2.R       # RVC indicators & figures
+1. classification/CountrySectorClass.R   # extract raw labels from .mat files (optional)
+2. import/ImportEMERGING_V2.R            # import & aggregate MRIO tables → EMERGING_Broad_Sectors.qs2
+3. import/STATA_ICIO_CSVs_V2.R          # write ICIO CSVs → ICIO_CSV/
+4. decomposition/ICIO_decomp.jl         # GVC decompositions → ICIO_CSV/ (or ICIO_decomp.do for Stata)
+5. decomposition/rvc_indicators_V2.R    # RVC indicators & figures
 ```
 
 ## Comparison with Other MRIO Databases

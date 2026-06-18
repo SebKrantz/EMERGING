@@ -8,7 +8,7 @@
 #   Block 2  exporter-sector, exp/source  (13 terms) -> EM_GVC_SEC_BM19.csv
 #   Block 3  bilateral-sector, exp/source (13 terms) -> EM_GVC_BIL_SEC_BM19.csv
 #
-# Run:  julia /Users/sebastiankrantz/Documents/Data/EMERGING/ICIO_decomp.jl
+# Run:  julia /Users/sebastiankrantz/Documents/Data/EMERGING/decomposition/ICIO_decomp.jl
 
 import Pkg
 Pkg.activate("/Users/sebastiankrantz/Documents/Julia/ICIO.jl")   # the ICIO.jl package env

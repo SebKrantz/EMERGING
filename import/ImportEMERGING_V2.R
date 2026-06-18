@@ -8,8 +8,8 @@ fastverse_extend(rhdf5, readxl, qs2, install = TRUE) # BiocManager::install("rhd
 setwd("~/Documents/Data/EMERGING")
 
 # Country and Sector Classification
-EM_CTRY <- read_xlsx("EMERGING_Country.xlsx")
-EM_SEC <- read_xlsx("EMERGING_Sector_V2.xlsx")
+EM_CTRY <- read_xlsx("classification/EMERGING_Country.xlsx")
+EM_SEC <- read_xlsx("classification/EMERGING_Sector_V2.xlsx")
 
 # Non-Country Entries
 # EM_CTRY |> subset(ISO3 %!in% africamonitor::am_countries_wld$ISO3) |> View()

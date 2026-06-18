@@ -69,7 +69,7 @@ tm_map_layout <- function() tm_layout(
 ### EMERGING v2 Broad Sectors
 
 # Broad-sector classification (v2): code + full name
-EM_SEC_BS <- read_xlsx("EMERGING_Sector_V2.xlsx") |>
+EM_SEC_BS <- read_xlsx("classification/EMERGING_Sector_V2.xlsx") |>
              gvr("Broad") |> funique() |> rename(tolower) |> rm_stub("broad_")
 
 # Exporter-sector decomposition. In v2, `from_sector` already holds the broad-
