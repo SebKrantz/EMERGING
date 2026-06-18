@@ -13,6 +13,9 @@
 !EMERGING_Sector.xlsx
 !EMERGING_Sector_V2.xlsx
 
+# Allow article PDF
+!EMERGING_Article.pdf
+
 # Directories with only data/output
 ICIO_CSV/
 V2/
