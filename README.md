@@ -75,7 +75,8 @@ EMERGING was designed to address systematic gaps in existing global MRIO databas
 
 | Database | Countries | Sectors | Coverage | Annual? |
 |----------|-----------|---------|----------|---------|
-| **EMERGING V2** | **245** | **133** | **2015–2023** | **Yes** |
+| **EMERGING V2** | **245** | **133** | **2015, 2018, 2021, 2023** | **No (4 yrs)** |
+| **EMERGING V1** | **245** | **134** | **2010, 2015–2019** | **No (6 yrs)** |
 | GLORIA | 164 regions | 97 | 1990–2019 | Yes |
 | Eora | ~187 | 26–500+ (26 consistent) | 1990–2015 | Yes |
 | EXIOBASE 3rx | 44+5 RoW | 163 | 1995–2022 | Yes |
