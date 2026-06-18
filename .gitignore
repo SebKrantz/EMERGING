@@ -7,6 +7,12 @@
 *.mat
 *.pdf
 
+# Allow classification Excel files
+!EMERGING_Classification.xlsx
+!EMERGING_Country.xlsx
+!EMERGING_Sector.xlsx
+!EMERGING_Sector_V2.xlsx
+
 # Directories with only data/output
 ICIO_CSV/
 V2/
