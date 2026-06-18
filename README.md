@@ -71,31 +71,31 @@ The curated classifications used by the V2 pipeline are `EMERGING_Sector_V2.xlsx
 
 ## Comparison with Other MRIO Databases
 
-EMERGING was designed to address systematic gaps in existing global MRIO databases, particularly their inadequate coverage of emerging and developing economies. The table below summarises the main global MRIOs (see Huo et al. 2022, Table 1):
+EMERGING was designed to address systematic gaps in existing global MRIO databases, particularly their inadequate coverage of emerging and developing economies. The table below summarises the main global MRIOs with latest version information (based on Huo et al. 2022, Table 1, updated to latest releases):
 
 | Database | Countries | Sectors | Coverage | Annual? |
 |----------|-----------|---------|----------|---------|
 | **EMERGING V2** | **245** | **133** | **2015, 2018, 2021, 2023** | **No (4 yrs)** |
 | **EMERGING V1** | **245** | **134** | **2010, 2015–2019** | **No (6 yrs)** |
-| GLORIA | 164 regions | 97 | 1990–2019 | Yes |
-| Eora | ~187 | 26–500+ (26 consistent) | 1990–2015 | Yes |
-| EXIOBASE 3rx | 44+5 RoW | 163 | 1995–2022 | Yes |
-| WIOD | 43+1 RoW | 56 | 2000–2014 | Yes |
-| OECD ICIO | 66+RoW | 45 | 1995–2018 | Yes |
-| GTAP 10 | 141+20 regions | 65 | 2004–2014 | No (3–4 yr) |
-| FIGARO | 45+RoW | 64 | 2010–2019 | Yes |
-| ADB | 62+RoW | 35 (harmonised) | 2000–2018 | Yes |
-| IDE-JETRO | Asia-Pacific | 56–76 | 1975–2005 | No |
+| GLORIA (R059, Dec 2024) | 164 | 120 | 1990–2022 | Yes |
+| Eora2 | 190 | 26 (harmonised) / full national | 1990–2022 | Yes |
+| EXIOBASE 3 v3.9.6 (Jun 2025) | 44+5 RoW | 163 | 1995–2022 | Yes |
+| WIOD (2016 release, discontinued) | 43+1 RoW | 56 | 2000–2014 | Yes |
+| OECD ICIO (2025 ed., rev. Jan 2026) | 80+RoW | 45 | 1995–2022 | Yes |
+| GTAP 12 (2025) | 145+18 regions | 65 | 2004–2023 | No (7 benchmarks) |
+| FIGARO (2025 ed.) | 49 | 64 | 2010–2023 | Yes |
+| ADB MRIO (Nov 2025) | 63+RoW | 35 | 2000, 2007–2024 | Partial (annual 2007+) |
+| IDE-JETRO (discontinued) | ~10 Asian | 76 | 1975–2005 | No (5 benchmarks) |
 
 ### Key advantages of EMERGING
 
-**Broadest country coverage with consistent sectoral detail.** EMERGING covers 245 economies — more than any other global MRIO — with a uniform classification of 133 sectors across all of them. In contrast, Eora provides 26 consistent sectors across countries despite nominally covering up to 500+ sectors; WIOD covers only 43 countries; and EXIOBASE focuses mainly on the EU. GTAP provides only 3- to 4-year snapshots and IDE-JETRO tops out at 2005.
+**Broadest country coverage with consistent sectoral detail.** EMERGING covers 245 economies — more than any other global MRIO — with a uniform classification of 133 sectors across all of them. Eora2 nominally covers 190 countries but provides only 26 consistent sectors across them; WIOD covers only 43 countries and has been discontinued since 2016 (OECD ICIO is its de facto successor); EXIOBASE focuses on 44 major economies; and GTAP 12 restricts tables to 7 benchmark snapshots. ADB MRIO covers only 35 sectors and 63 economies, while IDE-JETRO is limited to ~10 Asian economies and tops out at 2005.
 
 **Built from official national statistics.** 111 of the 245 economies have their own national IO data (in the form of IOTs, SUTs, or social accounting matrices) incorporated directly. Data are released by national statistical offices of 245 countries and reconciled with World Bank GDP and UN national accounts. GLORIA, by contrast, uses national data mainly as mathematical constraints to adjust an initial MRIO estimate rather than as primary inputs, which limits its accuracy for individual countries.
 
-**Bilateral trade accuracy.** The compilation backbone is UN Comtrade bilateral goods trade data and WTO/WTIO bilateral service trade data, building a 3-D trade matrix of 245 economies × 133 sectors per year. This is calibrated against official national statistics and international economic data (World Bank, UN, FAO, IEA) through a multi-step reconciliation and disaggregation procedure. GTAP relies on older benchmark data (most recent release uses 2014 as base year), and OECD ICIO ignores differences between products and industries in its SUT construction.
+**Bilateral trade accuracy.** The compilation backbone is UN Comtrade bilateral goods trade data and WTO/WITS bilateral service trade data, building a 3-D trade matrix of 245 economies × 133 sectors per year. This is calibrated against official national statistics and international economic data (World Bank, UN, FAO, IEA) through a multi-step reconciliation and disaggregation procedure. GTAP 12 (2025) now includes 2023 as a benchmark year and introduces integrated land-use data, but remains restricted to 7 snapshots and is primarily designed for CGE modelling. OECD ICIO (2025 ed.) reaches 80 economies and 2022, but uses a product-based approach that ignores industry–product distinctions in SUT construction.
 
-**Near real-time timeliness.** V2 covers 2015, 2018, 2021, and 2023 — currently the most up-to-date global MRIO. Annual updates are enabled by a nine-module modular compilation framework that allows individual economies to be updated independently as new data become available, without recompiling the entire database.
+**Near real-time timeliness.** V2 covers 2015, 2018, 2021, and 2023. Among global MRIOs with broad country and sector coverage, this is among the most recent: OECD ICIO (2025 ed.) covers through 2022 for 80 economies; EXIOBASE 3 reaches 2022 for 49 economies; ADB MRIO extends through 2024 but for only 35 sectors and 63 economies. New benchmark years are enabled by a nine-module modular compilation framework that allows individual economies to be updated independently as new data become available, without recompiling the entire database.
 
 **Detailed energy sector.** HS sector 27 (mineral fuels, oils, etc.) is disaggregated into seven energy sub-sectors (coal, oil, gas, electricity, gas manufacture & distribution, water, and related services) using HS 2002 4-digit codes. This energy detail is absent in most databases and enables accurate analysis of embodied energy and carbon in trade.
 
